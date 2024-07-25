@@ -2,27 +2,36 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="public/styles/main.css" />
+    <link rel="icon" type="image/x-icon" href="./public/images/icon.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="This is Matty. I built this is my personal webpage. it's under development"
+      content="This is Matty. I built this personal webpage. it's under development"
     />
     <title>Matty Zangeneh</title>
     <link rel="stylesheet" href="styles.css" />
     <!-- Link to external CSS file -->
   </head>
   <body>
-    <header>
+    <nav class="navbar">
+      <img src="/public/images/avatar.jpeg" alt="Avatar" />
+      <a href="#" class="nav-link" data-target="projects">projects</a>
+      <a href="https://github.com/" target="_blank" data-target="notes"
+        >notes</a
+      >
+      <a href="#" class="nav-link" data-target="profile">about</a>
+    </nav>
+    <!-- <header>
       <h1>Welcome to My Personal Website</h1>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <div><a href="index.html">Home</a></div>
+          <div><a href="about.html">About</a></div>
+          <div><a href="contact.html">Contact</a></div>
         </ul>
       </nav>
-    </header>
+    </header> -->
 
     <main>
       <section>
@@ -37,9 +46,9 @@
         <h2>My Projects</h2>
         <p>Here you can find some of the projects I've worked on:</p>
         <ul>
-          <li>Project 1</li>
-          <li>Project 2</li>
-          <li>Project 3</li>
+          <div>Project 1</div>
+          <div>Project 2</div>
+          <div>Project 3</div>
         </ul>
       </section>
     </main>

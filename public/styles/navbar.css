@@ -1,0 +1,36 @@
+.navbar {
+              position: fixed;
+              top: 30px;
+              left: 50%;
+              transform: translateX(-50%);
+              background-color:#222222e8;
+              padding: 10px 20px;
+              border-radius: 25px;
+              border: var(--border-size) solid var(--border-color);
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              z-index: 1000;
+              flex-wrap: wrap;
+          }
+          .navbar img {
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+          }
+          .navbar a {
+              color: var(--main-color);
+              text-decoration: none;
+              font-size: var(--p-font-size);
+              font-weight:normal;
+          }
+          .navbar a:hover {
+              text-decoration: none;
+          }
+          
+          /* responsive Navbar */
+          @media (max-width: 600px) {
+              .navbar {
+                  width:250px;        /* INCREASE WHEN YOU ADD STUFF TO NAVBAR */
+              }
+          }
