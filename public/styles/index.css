@@ -1,0 +1,9 @@
+.icons {
+              margin-top: 10px;
+} 
+.icons a {
+              color: yellow;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 30px;   
+}

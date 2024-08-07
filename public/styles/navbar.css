@@ -28,6 +28,7 @@
 }
 .navbar a:hover {
     text-decoration: none;
+    color:yellow;
 }
 
 /* responsive Navbar */
