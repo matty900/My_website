@@ -3,27 +3,18 @@
 }
 :root {
 
-     /* WHITE MODE color */
-     --background-color:white;
-     --main-color: #121212;
-     --secondary-color: #27272a;
-     --third-color: #676767;
-     --lighter-background: #444444;
-     --main-background-color: #fafafa;
-     --second-background-color: #ffffff;
-     --border-color: #cbcbcb;
+    /* WARM CREAM palette - creamy off-whites, soft beiges, warm mineral neutrals */
+    --background-color:#f5efe3;       /* creamy off-white page ground */
+    --main-color:#2c2620;             /* warm near-black for headings/emphasis */
+    --secondary-color:#463c30;        /* warm mineral brown for links */
+    --third-color:#6a6152;            /* warm taupe for body text */
+    --lighter-background:#e5dcc9;     /* soft beige */
+    --main-background-color:#faf5ea;  /* lightest cream */
+    --second-background-color:#ece3d1;/* beige surface */
+    --border-color:#dcd2bd;           /* warm sand border */
+    --accent-color:#a9662f;           /* burnt-sienna accent */
 
-    /* DARK MODE color */
-    --background-color:#121212;
-    --main-color:#fafafa;
-    --secondary-color:#ffffff;
-    --third-color:#9898a1;
-    --lighter-background:#cccccc;
-    --main-background-color:#121212;
-    --second-background-color:#27272a;
-    --border-color:#272727;
 
-    
     /* text */
 
     --h1-font-size: 32px;
@@ -39,6 +30,19 @@
     --border-size:2px;
 }
 
+/* WARM DARK palette - applied when the theme toggle is set to dark */
+:root[data-theme="dark"] {
+    --background-color:#1c1a17;
+    --main-color:#f2ece0;
+    --secondary-color:#e7dece;
+    --third-color:#b2a892;
+    --lighter-background:#37322b;
+    --main-background-color:#24211d;
+    --second-background-color:#2b2721;
+    --border-color:#3a352d;
+    --accent-color:#cd8443;
+}
+
 .section {
     margin-bottom:40px;
 }
@@ -49,7 +53,7 @@ body {
     font-family: "DM Sans", sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin: 0;
     padding: 0 15px;
     line-height: var(--line-height);
@@ -85,5 +89,49 @@ p {
 
 .container {
        margin-top: 100px;
-       max-width: 700px;
+       width: 700px;
+       max-width: 100%;
+}
+
+/* Plantin-style transitional serif for the header + project copy */
+:root {
+    --serif-font: "Spectral", "Plantin", Georgia, "Times New Roman", serif;
+}
+
+.name {
+    font-family: var(--serif-font);
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: 0.2px;
+}
+
+.tagline {
+    font-family: var(--serif-font);
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.55;
+    margin-top: 8px;
+    color: var(--main-color);
+}
+
+.project-details p,
+#tab-about p,
+#tab-contributions p {
+    font-family: var(--serif-font);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.project-details h3 {
+    font-family: var(--serif-font);
+}
+
+/* match the tab-panel headings to the project card headers */
+#tab-contributions h2,
+#tab-about h2 {
+    font-family: var(--serif-font);
+    font-size: var(--h3-font-size);
+    font-weight: bold;
+    margin: 0 0 5px;
+    color: var(--main-color);
 }

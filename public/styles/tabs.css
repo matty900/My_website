@@ -1,0 +1,46 @@
+/* tab navigation */
+.tabs {
+    display: flex;
+    gap: 28px;
+    margin: 30px 0 22px;
+    border-bottom: var(--border-size) solid var(--border-color);
+}
+
+.tab-btn {
+    font-family: "VT323", "Courier New", "Monaco", monospace;
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    background: none;
+    border: none;
+    color: var(--third-color);
+    cursor: pointer;
+    padding: 6px 2px;
+    margin-bottom: calc(-1 * var(--border-size));
+    border-bottom: 2px solid transparent;
+}
+
+.tab-btn:hover {
+    color: var(--main-color);
+}
+
+.tab-btn.active {
+    color: var(--main-color);
+    border-bottom-color: var(--main-color);
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* match the pixel font in the fixed navbar */
+.navbar a {
+    font-family: "VT323", "Courier New", "Monaco", monospace;
+    font-size: 22px;
+    letter-spacing: 1px;
+}

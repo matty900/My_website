@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <link
@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="public/styles/navbar.css" />
     <link rel="stylesheet" href="public/styles/global.css" />
     <link rel="stylesheet" href="public/styles/projects.css" />
+    <link rel="stylesheet" href="public/styles/tabs.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=VT323&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" type="image/x-icon" href="./public/images/icon.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,23 +27,37 @@
     <title>Matty Zangeneh</title>
     <link rel="stylesheet" href="styles.css" />
     <!-- Link to external CSS file -->
+    <script>
+      // apply saved theme before paint to avoid a flash
+      try {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <nav class="navbar">
       <img src="/public/images/avatar.jpeg" alt="Avatar" />
-      <a href="#projects" class="nav-link" data-target="projects"
-        >projects</a
+      <a href="#projects" class="nav-link" data-tab="projects">projects</a>
+      <a href="#contributions" class="nav-link" data-tab="contributions"
+        >contributions</a
       >
-      <a href="https://github.com/" target="_blank" data-target="notes"
-        >notes</a
+      <a href="#about" class="nav-link" data-tab="about">about</a>
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Toggle dark mode"
       >
-      <a href="#" class="nav-link" data-target="profile">about</a>
+        <i class="fas fa-moon"></i>
+      </button>
     </nav>
 
     <div class="container">
-      <h2>Matty Zangeneh</h2>
-      <br>
-        Programmer | Data Analyst | Software Developer </br> 
+      <h2 class="name">Matty Zangeneh</h2>
+      <p class="tagline">
+        Programmer | Data Analyst | Software Developer <br />
         Professional experience at Blanc Labs and CIBC
       </p>
       <div class="icons">
@@ -58,148 +79,248 @@
           ><i class="fab fa-youtube"></i>
         </a>
       </div>
-      <div class="about">
+      <div class="tabs" role="tablist">
+        <button class="tab-btn active" data-tab="projects">projects</button>
+        <button class="tab-btn" data-tab="contributions">contributions</button>
+        <button class="tab-btn" data-tab="about">about</button>
+      </div>
+
+      <section class="tab-panel active" id="tab-projects">
+        <div class="project-grid">
+          <div class="project">
+            <a href="https://github.com/matty900/api-explorer" target="_blank">
+              <img
+                src="./public/images/extension.png"
+                alt="API Explorer VS Code Extension"
+              />
+            </a>
+            <div class="project-details">
+              <h3>API Explorer VS Code Extension</h3>
+              <p>
+                A VS Code extension for discovering and testing APIs directly
+                within Visual Studio Code. It features API authentication,
+                request building, response inspection, and AI-powered semantic
+                search using embeddings and PostgreSQL/pgvector. The backend
+                includes SSRF protection and secure API proxying, with
+                deployment on Vercel and hosted embedding infrastructure.
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <a href="https://github.com/matty900/drifty_way" target="_blank">
+              <img src="./public/images/Driftyway.png" alt="" />
+            </a>
+            <div class="project-details">
+              <h3>Driftyway</h3>
+              <p>
+                A modern web application built with Next.js frontend deployed on
+                Vercel and Express.js backend hosted on Railway. This project
+                implements a comprehensive travel platform allowing users to
+                discover eco-conscious destinations, plan sustainable
+                itineraries, and connect with local cultural experiences
+                worldwide.
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <a
+              href="https://github.com/matty900/cvi-car-simulation"
+              target="_blank"
+            >
+              <img src="./public/images/car_simulation.png" alt="" />
+            </a>
+            <div class="project-details">
+              <h3>Self-Driving Car Simulation Using CNN</h3>
+              <p>
+                A deep learning system using a Convolutional Neural Network
+                (CNN) to predict steering angles for autonomous driving. Trained
+                on front-facing camera images from manual driving and tested in
+                the Udacity simulator, it processes visual input in real-time to
+                navigate tracks autonomously.
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <a
+              href="https://github.com/matty900/ManagementApplication.NET"
+              target="_blank"
+            >
+              <img src="./public/images/asp.net.jpeg" alt="" />
+            </a>
+            <div class="project-details">
+              <h3>TV Production Management System (.NET)</h3>
+              <p>
+                A modern web application built with ASP.NET and C#, designed for
+                television production companies to manage actors, TV series, and
+                episodes. It features role-based access (Executive, Coordinator,
+                Clerk, Admin) and supports full CRUD operations. Ideal for
+                learning web development, relational data modeling, and
+                .NET-based authentication and authorization.
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <a href="https://github.com/matty900/ExpressGram" target="_blank">
+              <img
+                src="./public/images/instagram-logo-instagram-icon-transparent-free-png.webp"
+                alt=""
+              />
+            </a>
+            <div class="project-details">
+              <h3>ExpressGram</h3>
+              <p>
+                A web application built with JavaScript that simulates core
+                Instagram features such as posting, liking, and browsing
+                content.
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <a
+              href="https://github.com/matty900/HotelReservation"
+              target="_blank"
+            >
+              <img src="./public/images/1.webp" alt="" />
+            </a>
+            <div class="project-details">
+              <h3>HotelReservation</h3>
+              <p>
+                A Java-based hotel reservation system that allows users to book
+                rooms, view reservations, and manage bookings.
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <a
+              href="https://github.com/matty900/Planet-Fitness-Gym-Database"
+              target="_blank"
+            >
+              <img
+                src="https://mma.prnewswire.com/media/341868/PLANET_FITNESS_May_2023_LOGO.jpg"
+                alt=""
+              />
+            </a>
+            <div class="project-details">
+              <h3>Planet Fitness Gym Database</h3>
+              <p>
+                A relational database system designed for a gym, managing
+                customer profiles, workout progress, inventory, and personalized
+                plans. Gym members can log in to view workout plans and progress
+                reports
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <a href="https://github.com/matty900/AIGameBot" target="_blank">
+              <img
+                src="./public/images/Screenshot 2024-11-17 at 6.22.44 PM.png"
+                alt=""
+              />
+            </a>
+            <div class="project-details">
+              <h3>AI Game Bot</h3>
+              <p>
+                An AI game bot built with Python using game trees, evaluation
+                functions, and algorithms to select optimal moves.
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <a
+              href="https://github.com/matty900/ShoppingCart-Database"
+              target="_blank"
+            >
+              <img src="./public/images/shopping_cart_database.png" alt="" />
+            </a>
+            <div class="project-details">
+              <h3>ShoppingCart-Database</h3>
+              <p>
+                A C++ application that uses Oracle Call Interface (OCCI) to
+                implement a shopping cart system. Users can log in, browse
+                products, add items to a cart, checkout, or cancel orders.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="tab-contributions">
+        <h2>Contributions</h2>
+        <p>Open-source and community contributions I've made — coming soon.</p>
+      </section>
+
+      <section class="tab-panel" id="tab-about">
         <h2>About</h2>
         <p>
           I am passionate about learning and expanding my expertise in computer
           science, with a focus on data analysis, modeling, and software
           development.
         </p>
-      </div>
-      <div class="projects" id="projects">
-        <h2>My Projects</h2>
-        <p>Here you can find some of the projects I've worked on:</p>
-      </div>
-      <div class="project-grid">
-        <div class="project">
-          <a href="https://github.com/matty900/drifty_way" target="_blank">
-            <img src="./public/images/Driftyway.png" alt="" />
-          </a>
-          <div class="project-details">
-            <h3>Driftyway</h3>
-            <p>
-              A modern web application built with Next.js frontend deployed on
-              Vercel and Express.js backend hosted on Railway. This project
-              implements a comprehensive travel platform allowing users to
-              discover eco-conscious destinations, plan sustainable itineraries,
-              and connect with local cultural experiences worldwide.
-            </p>
-          </div>
-        </div>
-        <div class="project">
-          <a
-            href="https://github.com/matty900/cvi-car-simulation"
-            target="_blank"
-          >
-            <img src="./public/images/car_simulation.png" alt="" />
-          </a>
-          <div class="project-details">
-            <h3>Self-Driving Car Simulation Using CNN</h3>
-            <p>
-              A deep learning system using a Convolutional Neural Network (CNN) to predict steering angles for autonomous driving. Trained on front-facing camera images from manual driving and tested in the Udacity simulator, it processes visual input in real-time to navigate tracks autonomously.
-            </p>
-          </div>
-        </div>
-        <div class="project">
-          <a
-            href="https://github.com/matty900/ManagementApplication.NET"
-            target="_blank"
-          >
-            <img src="./public/images/asp.net.jpeg" alt="" />
-          </a>
-          <div class="project-details">
-            <h3>TV Production Management System (.NET)</h3>
-            <p>
-              A modern web application built with ASP.NET and C#, designed for
-              television production companies to manage actors, TV series, and
-              episodes. It features role-based access (Executive, Coordinator,
-              Clerk, Admin) and supports full CRUD operations. Ideal for
-              learning web development, relational data modeling, and .NET-based
-              authentication and authorization.
-            </p>
-          </div>
-        </div>
-        <div class="project">
-          <a href="https://github.com/matty900/ExpressGram" target="_blank">
-            <img
-              src="./public/images/instagram-logo-instagram-icon-transparent-free-png.webp"
-              alt=""
-            />
-          </a>
-          <div class="project-details">
-            <h3>ExpressGram</h3>
-            <p>
-              A web application built with JavaScript that simulates core
-              Instagram features such as posting, liking, and browsing content.
-            </p>
-          </div>
-        </div>
-        <div class="project">
-          <a
-            href="https://github.com/matty900/HotelReservation"
-            target="_blank"
-          >
-            <img src="./public/images/1.webp" alt="" />
-          </a>
-          <div class="project-details">
-            <h3>HotelReservation</h3>
-            <p>
-              A Java-based hotel reservation system that allows users to book
-              rooms, view reservations, and manage bookings.
-            </p>
-          </div>
-        </div>
-        <div class="project">
-          <a
-            href="https://github.com/matty900/Planet-Fitness-Gym-Database"
-            target="_blank"
-          >
-            <img
-              src="https://mma.prnewswire.com/media/341868/PLANET_FITNESS_May_2023_LOGO.jpg"
-              alt=""
-            />
-          </a>
-          <div class="project-details">
-            <h3>Planet Fitness Gym Database</h3>
-            <p>
-              A relational database system designed for a gym, managing customer
-              profiles, workout progress, inventory, and personalized plans. Gym
-              members can log in to view workout plans and progress reports
-            </p>
-          </div>
-        </div>
-        <div class="project">
-          <a href="https://github.com/matty900/AIGameBot" target="_blank">
-            <img
-              src="./public/images/Screenshot 2024-11-17 at 6.22.44 PM.png"
-              alt=""
-            />
-          </a>
-          <div class="project-details">
-            <h3>AI Game Bot</h3>
-            <p>
-              An AI game bot built with Python using game trees, evaluation
-              functions, and algorithms to select optimal moves.
-            </p>
-          </div>
-        </div>
-        <div class="project">
-          <a
-            href="https://github.com/matty900/ShoppingCart-Database"
-            target="_blank"
-          >
-            <img src="./public/images/shopping_cart_database.png" alt="" />
-          </a>
-          <div class="project-details">
-            <h3>ShoppingCart-Database</h3>
-            <p>
-              A C++ application that uses Oracle Call Interface (OCCI) to
-              implement a shopping cart system. Users can log in, browse
-              products, add items to a cart, checkout, or cancel orders.
-            </p>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
+
+    <script>
+      (function () {
+        var tabs = document.querySelectorAll(".tab-btn");
+        var navLinks = document.querySelectorAll(".nav-link[data-tab]");
+        var panels = document.querySelectorAll(".tab-panel");
+
+        var names = ["projects", "contributions", "about"];
+
+        function activate(name) {
+          if (names.indexOf(name) === -1) name = "projects";
+          tabs.forEach(function (b) {
+            b.classList.toggle("active", b.getAttribute("data-tab") === name);
+          });
+          panels.forEach(function (p) {
+            p.classList.toggle("active", p.id === "tab-" + name);
+          });
+        }
+
+        tabs.forEach(function (b) {
+          b.addEventListener("click", function () {
+            activate(b.getAttribute("data-tab"));
+          });
+        });
+
+        navLinks.forEach(function (a) {
+          a.addEventListener("click", function (e) {
+            e.preventDefault();
+            activate(a.getAttribute("data-tab"));
+          });
+        });
+
+        activate(location.hash.replace("#", ""));
+
+        var root = document.documentElement;
+        var toggle = document.getElementById("theme-toggle");
+
+        function syncToggle() {
+          var dark = root.getAttribute("data-theme") === "dark";
+          toggle.innerHTML = dark
+            ? '<i class="fas fa-sun"></i>'
+            : '<i class="fas fa-moon"></i>';
+          toggle.setAttribute(
+            "aria-label",
+            dark ? "Switch to light mode" : "Switch to dark mode"
+          );
+        }
+
+        toggle.addEventListener("click", function () {
+          var dark = root.getAttribute("data-theme") === "dark";
+          if (dark) {
+            root.removeAttribute("data-theme");
+          } else {
+            root.setAttribute("data-theme", "dark");
+          }
+          try {
+            localStorage.setItem("theme", dark ? "light" : "dark");
+          } catch (e) {}
+          syncToggle();
+        });
+
+        syncToggle();
+      })();
+    </script>
   </body>
 </html>

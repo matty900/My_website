@@ -18,7 +18,7 @@
     width: 200px;
     height: 200px;
     object-fit: contain;
-    background-color: black;
+    background-color: var(--main-background-color);
 }
 .project .project-image {
     width: var(--project-image-width);
