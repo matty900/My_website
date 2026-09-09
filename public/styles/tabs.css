@@ -37,10 +37,3 @@
 .tab-panel.active {
     display: block;
 }
-
-/* match the pixel font in the fixed navbar */
-.navbar a {
-    font-family: "VT323", "Courier New", "Monaco", monospace;
-    font-size: 22px;
-    letter-spacing: 1px;
-}
